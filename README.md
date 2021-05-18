@@ -60,3 +60,15 @@ possibleCombinations, once logged to the console, outputs one random charcter pe
 Next steps: Convert possibleCombinations into a function. Eventually we will need to be able to run a loop that randomly selects one of the 4 index points within this array a set number of times. I plan to start with setting it to 8 times, if successful I should be able to set a variable to match end user input.
 
 Note: this code block is currently nested within a declared function generatePassword. As I progress, I am not convinced this is the best spot for this code. I will address this once I proof out how to randomly iterate over possibleCombinations. It is possible I may create a new function, and set possibleCombinations as the output. 
+
+Step 2: Branched off into "Array Madness" to proof out my theory. I moved out all arrays from the local code block of generatePassword() and made them more global given they were still in the code block of writePassword
+
+Changed the name of array of functions to buildingBlocks, added car constructor:
+ 
+        //array of functions above
+        var buildingBlocks= [randLetter(),randLetterUpper(), randNum(),randSpecChar()];      
+        //Generates a random number based on the length of buildingBlocks
+        var constructor= Math.floor((Math.random() * buildingBlocks.length));
+    
+    
+To pro

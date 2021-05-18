@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 function writePassword() {
-    
-    function generatePassword (){
     //BUILD OUT THE ABILITY TO RANDOMLY SELECT UPPERCASE, LOWERCASE, SPECIAL CHARACTER, AND NUMBER 
         //generate lowercase letter//
         function randLetter () {
@@ -23,14 +23,21 @@ function writePassword() {
         function randNum(){ 
         return Math.floor(Math.random()*10)
         };
+
         //generate random special characters. Converted to string characters
         function randSpecChar(){
         var specChar =["!","@","#","$","%","^","&","*","(",")","<",">"]
         return specChar[Math.floor(Math.random()*specChar.length)]
+        };
         
-    };
-        var possibleCombinations = [randLetter(),randLetterUpper(),randNum(),randSpecChar()];
-    }
+
+        let buildingBlocks= [randLetter(),randLetterUpper(), randNum(),randSpecChar()];      
+        let constructor= Math.floor((Math.random() * buildingBlocks.length));
+    
+        function generatePassword (){
+              return buildingBlocks[constructor]
+        };
+
         
         var password = generatePassword();
         var passwordText = document.querySelector("#password");
