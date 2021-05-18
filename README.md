@@ -71,4 +71,8 @@ Changed the name of array of functions to buildingBlocks, added car constructor:
         var constructor= Math.floor((Math.random() * buildingBlocks.length));
     
     
-To pro
+Final test, updated unreferenced started function generatePassword
+
+ function generatePassword (){
+              return buildingBlocks[constructor]
+        };

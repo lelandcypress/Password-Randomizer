@@ -30,20 +30,27 @@ function writePassword() {
         return specChar[Math.floor(Math.random()*specChar.length)]
         };
         
-
-        let buildingBlocks= [randLetter(),randLetterUpper(), randNum(),randSpecChar()];      
-        let constructor= Math.floor((Math.random() * buildingBlocks.length));
-    
+        //array of functions above
+        var buildingBlocks= [randLetter(),randLetterUpper(), randNum(),randSpecChar()];      
+        //Generates a random number based on the length of buildingBlocks
+        var constructor = Math.floor((Math.random() * buildingBlocks.length))
+              //good code above//
+            //pick it up here//
+            //Next Step: find a way to  
+            //we know this array is successfully called in function generatePassword. Next step is to find a way to run a loop that randomly will randomly select a value from 
+            var testArray= ['1']
+        
         function generatePassword (){
-              return buildingBlocks[constructor]
-        };
+               console.log(testArray);
+        }
+        
+    
+            
+            var password = generatePassword();
+            var passwordText = document.querySelector("#password");
+            passwordText.value = password;
+        };    
 
-        
-        var password = generatePassword();
-        var passwordText = document.querySelector("#password");
-        passwordText.value = password;
-        
-};
 
 
 // Add event listener to generate button
