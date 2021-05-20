@@ -12,7 +12,7 @@ function writePassword() {
             var alphabetUpper =['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
             var specChar =["!","@","#","$","%","^","&","*","(",")","<",">"];    
             //Functions noted earlier in the code are pushed here to allow for a loop 
-            var pArray = [];
+            var pArray = ['fudge'];
             
            
             //Functions will randomly choose a letter, uppercase, number btw 0-9, and special characters when run 
@@ -60,7 +60,9 @@ function writePassword() {
             //Prompts user for password length, creates variable that can be used later in code
             var pLength = window.prompt("Please enter a number between 8 and 256 to select your password length");
             if (pLength < 257 && pLength > 7){
-                userSelection()
+                userSelection();
+                console.log('Paswword length is ' + pLength)
+                console.log('pArray is ' + pArray)
             }else{
             window.alert("Please enter a number between 8 and 256")}
 
