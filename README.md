@@ -23,56 +23,57 @@ generateBtn.addEventListener("click", writePassword);
 
 Steps Taken
 
-Step 1: Program the ability to generate random characters collect values in an endpoint array.
-Method: Declared 4 functions, which were designed to generate random values depending on what data type. I had to treat the special characters as string values since I kept getting a debugging error otherwise. 
+Step 1: User is prompted to enter in desired password lenght, which is stored as a variable "length"
+//Add screenshot here       
+Code:
+        //Prompts user for password length. Function will not continue if user exceeds approved parameters
+        var length = +window.prompt("Please enter a number between 8 and 256 to select your password length");
+        if (length < 257 && length > 7) {
+            userSelection();
 
-    //BUILD OUT THE ABILITY TO RANDOMLY SELECT UPPERCASE, LOWERCASE, SPECIAL CHARACTER, AND NUMBER 
-        //generate lowercase letter//
-        function randLetter () {
-        var alphabet =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-        return alphabet[Math.floor(Math.random()*alphabet.length)]
-        };
-        
-        
-        //generate random uppercase letter//
-        function randLetterUpper () {
-        var alphabetUpper =['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-        return alphabetUpper[Math.floor(Math.random()*alphabetUpper.length)]
-        };
-            
-        //generate random number between 0-9
-        function randNum(){ 
-        return Math.floor(Math.random()*10)
-        };
-        //generate random special characters. Converted to string characters
-        function randSpecChar(){
-        var specChar =["!","@","#","$","%","^","&","*","(",")","<",">"]
-        return specChar[Math.floor(Math.random()*specChar.length)]
-
-Result: Mostly successful. I compiled the 4 functions above into this array:
-
-   var possibleCombinations = [randLetter(),randLetterUpper(),randNum(),randSpecChar()];
-
-possibleCombinations, once logged to the console, outputs one random charcter per data type.
+        } else {
+            window.alert("Please enter a number between 8 and 256")
+        }
 
 
+//Add screenshot here
+Step 2: User is asked to confirm whether they wish to include Lowercase, Uppercase, Numbers, and Symbols in their password. This is used to build out the string named characters.
+//Add Screenshot
 
-Next steps: Convert possibleCombinations into a function. Eventually we will need to be able to run a loop that randomly selects one of the 4 index points within this array a set number of times. I plan to start with setting it to 8 times, if successful I should be able to set a variable to match end user input.
+Code:
+        //User confirms their desired characters.
+        function userSelection() {
 
-Note: this code block is currently nested within a declared function generatePassword. As I progress, I am not convinced this is the best spot for this code. I will address this once I proof out how to randomly iterate over possibleCombinations. It is possible I may create a new function, and set possibleCombinations as the output. 
+            var wantLow = window.confirm("Do you want lowercase letters?")
 
-Step 2: Branched off into "Array Madness" to proof out my theory. I moved out all arrays from the local code block of generatePassword() and made them more global given they were still in the code block of writePassword
+            //Confirm User Criteria 
+            var wantNum = window.confirm("Do you want numbers?")
 
-Changed the name of array of functions to buildingBlocks, added car constructor:
- 
-        //array of functions above
-        var buildingBlocks= [randLetter(),randLetterUpper(), randNum(),randSpecChar()];      
-        //Generates a random number based on the length of buildingBlocks
-        var constructor= Math.floor((Math.random() * buildingBlocks.length));
-    
-    
-Final test, updated unreferenced started function generatePassword
 
- function generatePassword (){
-              return buildingBlocks[constructor]
-        };
+            //Confirm User Criteria 
+            var wantChar = window.confirm("Do you want special characters?")
+
+
+            //Confirm User Criteria 
+            var wantUp = window.confirm("Do you want uppercase letters?")
+            //Added to Character string if true
+            if (wantLow === true) {
+                characters += lowerCase
+            };
+            //Added to Character string if true
+            if (wantUp === true) {
+                characters += upperCase
+            };
+            //Added to Character string if true
+            if (wantNum === true) {
+                characters += numbers
+            };
+            //Added to Character string if true
+            if (wantChar === true) {
+                characters += symbols
+            };
+        }
+Step 3: a for loop is run to return a random character from the string.
+//screenshot here
+
+URL here:
