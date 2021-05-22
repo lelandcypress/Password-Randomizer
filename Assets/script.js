@@ -51,16 +51,15 @@ function writePassword() {
 
         } else {
             window.alert("Please enter a number between 8 and 256")
+            
         }
     //needs work//
-displayPassword = function(){
         var display =''
         for (var i=0;i < length; i++){   
-        display += characters.charAt(Math.floor(Math.random() * characters.length));
-        window.alert(display) 
-        }}
-        
-       return displayPassword() 
+            display += characters.charAt(Math.floor(Math.random() * characters.length));
+            console.log(display) 
+        }
+        return display;
     }
 
     // Write password to the #password input
