@@ -53,7 +53,7 @@ function writePassword() {
             window.alert("Please enter a number between 8 and 256")
             
         }
-    //needs work//
+    //Loop run to randomize characters at push output//
         var display =''
         for (var i=0;i < length; i++){   
             display += characters.charAt(Math.floor(Math.random() * characters.length));

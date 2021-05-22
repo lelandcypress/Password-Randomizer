@@ -24,9 +24,11 @@ generateBtn.addEventListener("click", writePassword);
 Steps Taken
 
 Step 1: User is prompted to enter in desired password lenght, which is stored as a variable "length"
-//Add screenshot here       
+![User_Input](Assets\README_IMG\User_Input.PNG)      
 Code:
-        //Prompts user for password length. Function will not continue if user exceeds approved parameters
+        
+        
+        
         var length = +window.prompt("Please enter a number between 8 and 256 to select your password length");
         if (length < 257 && length > 7) {
             userSelection();
@@ -36,12 +38,12 @@ Code:
         }
 
 
-//Add screenshot here
+
 Step 2: User is asked to confirm whether they wish to include Lowercase, Uppercase, Numbers, and Symbols in their password. This is used to build out the string named characters.
-//Add Screenshot
+![User Selection](Assets/README_IMG/Selection.PNG)
 
 Code:
-        //User confirms their desired characters.
+        
         function userSelection() {
 
             var wantLow = window.confirm("Do you want lowercase letters?")
@@ -73,7 +75,17 @@ Code:
                 characters += symbols
             };
         }
-Step 3: a for loop is run to return a random character from the string.
-//screenshot here
+Step 3: A for loop is run to return a random character from the string.
+![Output](Assets/README_IMG/output.PNG)
 
-URL here:
+Code:
+
+        var display =''
+        for (var i=0;i < length; i++){   
+            display += characters.charAt(Math.floor(Math.random() * characters.length));
+            console.log(display) 
+        }
+
+
+
+URL here: https://lelandcypress.github.io/Password-Randomizer/
